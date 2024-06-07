@@ -48,10 +48,9 @@
 <div class="layout-wrapper layout-content-navbar">
     <div class="layout-container">
         <!-- Menu -->
-
         <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
             <div class="app-brand demo">
-                <a href="index.html" class="app-brand-link">
+                <a href="{% url 'main:welcome' %}" class="app-brand-link">
               <span class="app-brand-logo demo">
                 <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg"
                      xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -99,10 +98,10 @@
                   </g>
                 </svg>
               </span>
-                    <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
+                    <span class="app-brand-text demo menu-text fw-bolder ms-2">Attestatsiya</span>
                 </a>
 
-                <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+                <a href="{% url 'main:welcome' %}" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
                     <i class="bx bx-chevron-left bx-sm align-middle"></i>
                 </a>
             </div>
@@ -112,46 +111,10 @@
             <ul class="menu-inner py-1">
                 <!-- Dashboard -->
                 <li class="menu-item active">
-                    <a href="index.html" class="menu-link">
+                    <a href="{% url 'main:welcome' %}" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-home-circle"></i>
                         <div data-i18n="Analytics">Dashboard</div>
                     </a>
-                </li>
-
-                <!-- Layouts -->
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-layout"></i>
-                        <div data-i18n="Layouts">Layouts</div>
-                    </a>
-
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="layouts-without-menu.html" class="menu-link">
-                                <div data-i18n="Without menu">Without menu</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-without-navbar.html" class="menu-link">
-                                <div data-i18n="Without navbar">Without navbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-container.html" class="menu-link">
-                                <div data-i18n="Container">Container</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-fluid.html" class="menu-link">
-                                <div data-i18n="Fluid">Fluid</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="layouts-blank.html" class="menu-link">
-                                <div data-i18n="Blank">Blank</div>
-                            </a>
-                        </li>
-                    </ul>
                 </li>
 
                 <li class="menu-header small text-uppercase">
@@ -176,53 +139,7 @@
                 </li>
 
 
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                        <div data-i18n="Misc">Misc</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="pages-misc-error.html" class="menu-link">
-                                <div data-i18n="Error">Error</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="pages-misc-under-maintenance.html" class="menu-link">
-                                <div data-i18n="Under Maintenance">Under Maintenance</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Components -->
 
-
-                <!-- Extended components -->
-                <li class="menu-item">
-                    <a href="javascript:void(0)" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-copy"></i>
-                        <div data-i18n="Extended UI">Extended UI</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                                <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="extended-ui-text-divider.html" class="menu-link">
-                                <div data-i18n="Text Divider">Text Divider</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li class="menu-item">
-                    <a href="icons-boxicons.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-crown"></i>
-                        <div data-i18n="Boxicons">Boxicons</div>
-                    </a>
-                </li>
 
                 <!-- Forms & Tables -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span>
@@ -245,51 +162,24 @@
 
                     </ul>
                 </li>
-                <li class="menu-item">
-                    <a href="javascript:void(0);" class="menu-link menu-toggle">
-                        <i class="menu-icon tf-icons bx bx-detail"></i>
-                        <div data-i18n="Form Layouts">Form Layouts</div>
-                    </a>
-                    <ul class="menu-sub">
-                        <li class="menu-item">
-                            <a href="form-layouts-vertical.html" class="menu-link">
-                                <div data-i18n="Vertical Form">Vertical Form</div>
-                            </a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="form-layouts-horizontal.html" class="menu-link">
-                                <div data-i18n="Horizontal Form">Horizontal Form</div>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- Tables -->
-                <li class="menu-item">
-                    <a href="tables-basic.html" class="menu-link">
-                        <i class="menu-icon tf-icons bx bx-table"></i>
-                        <div data-i18n="Tables">Tables</div>
-                    </a>
-                </li>
+
+
                 <!-- Misc -->
                 <li class="menu-header small text-uppercase"><span class="menu-header-text">Misc</span></li>
                 <li class="menu-item">
-                    <a
-                            href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                            target="_blank"
-                            class="menu-link"
-                    >
+                    <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-support"></i>
-                        <div data-i18n="Support">Support</div>
+                        <div data-i18n="Support">
+                            Support
+                        </div>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a
-                            href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                            target="_blank"
-                            class="menu-link"
-                    >
+                    <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="menu-link">
                         <i class="menu-icon tf-icons bx bx-file"></i>
-                        <div data-i18n="Documentation">Documentation</div>
+                        <div data-i18n="Documentation">
+                            Documentation
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -299,7 +189,6 @@
         <!-- Layout container -->
         <div class="layout-page">
             <!-- Navbar -->
-
             <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
                  id="layout-navbar">
                 <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
@@ -339,7 +228,7 @@
                             <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
                                data-bs-toggle="dropdown">
                                 <div class="avatar avatar-online">
-                                    <img src="../assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle"/>
+                                    <img src="{% static 'img/avatars/1.png' %}" alt class="w-px-40 h-auto rounded-circle"/>
                                 </div>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end">
@@ -348,7 +237,7 @@
                                         <div class="d-flex">
                                             <div class="flex-shrink-0 me-3">
                                                 <div class="avatar avatar-online">
-                                                    <img src="../assets/img/avatars/1.png" alt
+                                                    <img src="{% static 'img/avatars/1.png' %}" alt
                                                          class="w-px-40 h-auto rounded-circle"/>
                                                 </div>
                                             </div>
@@ -387,7 +276,7 @@
                                     <div class="dropdown-divider"></div>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item" href="auth-login-basic.html">
+                                    <a class="dropdown-item" href="#">
                                         <i class="bx bx-power-off me-2"></i>
                                         <span class="align-middle">Log Out</span>
                                     </a>
@@ -412,25 +301,23 @@
                 <footer class="content-footer footer bg-footer-theme">
                     <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
                         <div class="mb-2 mb-md-0">
-                            ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            , made with ❤️ by
-                            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                            © 2024, made with ❤️ by
+                            <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">
+                                ThemeSelection
+                            </a>
                         </div>
                         <div>
-                            <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
-                            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More
-                                Themes
+                            <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">
+                                License
+                            </a>
+                            <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">
+                                More Themes
                             </a>
 
-                            <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
-                               target="_blank" class="footer-link me-4">
+                            <a href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/" target="_blank" class="footer-link me-4">
                                 Documentation
                             </a>
-                            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
-                               target="_blank" class="footer-link me-4">
+                            <a href="https://github.com/themeselection/sneat-html-admin-template-free/issues" target="_blank" class="footer-link me-4">
                                 Support
                             </a>
                         </div>
@@ -445,8 +332,7 @@
         <!-- / Layout page -->
     </div>
 
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
+
 </div>
 <!-- / Layout wrapper -->
 

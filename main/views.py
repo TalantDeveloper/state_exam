@@ -6,8 +6,8 @@ from .models import Student, Group, Title, Station, General
 
 def welcome_view(request):
     context = contexts_func(request)
-
-    return render(request, 'base.html', context)
+    context['talaba'] = Student.objects.all().count()
+    return render(request, 'main/welcome.html', context)
 
 
 def student_view(request):
