@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4">
+                <span class="text-muted fw-light">
+                    Guruhlar /
+                    {{ group.name }}
+                </span>
+            </h4>
+            <!-- Bordered Table -->
+            <div class="card">
+                <h5 class="card-header">
+                    {{ group.name }}-guruh bo'yicha Talabalar ro'yhati
+                </h5>
+                <div class="card-body">
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th> ID </th>
+                                <th> Talaba ID </th>
+                                <th> Talaba I.F.O. </th>
+                                <th> Guruhi </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                {% for student in group.students.all %}
+                                    <tr>
+                                        <td> <strong> {{ student.id }} </strong> </td>
+                                        <td> {{ student.title }} </td>
+                                        <td> {{ student.full_name }} </td>
+                                        <td> {{ group.name }} </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--/ Bordered Table -->
+        </div>
+        <!-- / Content -->
+    </div>
+
+{% endblock %}

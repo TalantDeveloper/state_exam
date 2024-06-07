@@ -10,57 +10,38 @@
             <h4 class="fw-bold py-3 mb-4">
                 <span class="text-muted fw-light">
                     Stansiyadan o'tishda akkreditatsiya qilinayotgan shaxsning xarakatlarini baholash maqsadida foydalaniladi /
+                    {{ station.name }}
                 </span>
-
             </h4>
             <!-- Bordered Table -->
             <div class="card">
                 <h5 class="card-header">
-                    Akkreditatsiya qilayotgan shaxsning xarakati
+                    {{ station.name }} bo'yicha Akkreditatsiya qilayotgan shaxsning xarakati
                 </h5>
                 <div class="card-body">
                     <div class="table-responsive text-nowrap">
                         <table class="table table-bordered">
                             <thead>
                             <tr>
-                                <th>
-                                    ID
-                                </th>
-                                <th>
-                                    Stansiya
-                                </th>
-                                <th>
-                                    Xarakatlar
-                                </th>
-
+                                <th> ID </th>
+                                <th> Stansiya </th>
+                                <th> Xarakatlar </th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for station in stations %}
                                 {% for title in station.titles.all %}
                                     <tr>
-                                        <td>
-                                            <strong>
-                                                {{ title.id }}
-                                            </strong>
-                                        </td>
-                                        <td>
-                                            {{ station.name }}
-                                        </td>
-
-                                        <td>
-                                            {{ title.title }}
-                                        </td>
+                                        <td> <strong> {{ title.id }} </strong> </td>
+                                        <td> {{ station.name }} </td>
+                                        <td> {{ title.title }} </td>
                                     </tr>
                                 {% endfor %}
-                            {% endfor %}
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <!--/ Bordered Table -->
-            <hr class="my-5"/>
         </div>
         <!-- / Content -->
     </div>

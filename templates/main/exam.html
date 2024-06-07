@@ -8,15 +8,15 @@
                     <!-- Notifications -->
                     <h5 class="card-header">Recent Devices</h5>
                     <div class="card-body">
-            <span>
-                {{ station_pk }} - {{ student_pk }}
-                We need permission from your browser to show notifications.
-                <span class="notificationRequest">
-                    <strong>
-                        Request Permission
-                    </strong>
-                </span>
-            </span>
+                        <span>
+                            {{ station_pk }} - {{ student_pk }}
+                            We need permission from your browser to show notifications.
+                            <span class="notificationRequest">
+                                <strong>
+                                    Request Permission
+                                </strong>
+                            </span>
+                        </span>
                         <div class="error">
 
                         </div>
@@ -37,9 +37,9 @@
                             <form method="post" class="form-control">
                                 {% csrf_token %}
                                 {% for list in list_s %}
-
+                                
+                                    
                                 {% endfor %}
-
 
                                 <tr>
                                     <td class="text-nowrap">
@@ -60,8 +60,7 @@
                                     <td>
                                         <div class="form-check d-flex justify-content-center">
                                             <label for="defaultCheck6"></label>
-                                            <input class="form-check-input" type="checkbox" id="defaultCheck6"
-                                                   name="2"/>
+                                            <input class="form-check-input" type="checkbox" id="defaultCheck6" name="2"/>
                                         </div>
                                     </td>
                                 </tr>
