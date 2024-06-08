@@ -10,10 +10,15 @@ def welcome_view(request):
     return render(request, 'main/welcome.html', context)
 
 
-def student_view(request):
+def students_view(request):
     context = contexts_func(request)
-    context['students'] = Student.objects.all()
     return render(request, 'main/students.html', context)
+
+
+def student_view(request, student_id):
+    context = contexts_func(request)
+    context['student'] = Student.objects.get(id=student_id)
+    return render(request, 'main/student.html', context)
 
 
 def groups_view(request):

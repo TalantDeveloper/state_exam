@@ -13,7 +13,7 @@
                 </span>
                 Basic Tables
             </h4>
-            
+
             <!-- Bordered Table -->
             <div class="card">
                 <h5 class="card-header">
@@ -25,141 +25,64 @@
                             <thead>
                             <tr>
                                 <th>
-                                    Project
+                                    ID
                                 </th>
                                 <th>
-                                    Client
+                                    Talaba ID
                                 </th>
                                 <th>
-                                    Status
+                                    F.I.O.
                                 </th>
                                 <th>
-                                    Actions
+                                    Guruh
+                                </th>
+                                <th>
+                                    Attestatsiya
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>
-                                    <i class="fab fa-angular fa-lg text-danger me-3"></i> 
-                                    <strong>
-                                        Angular Project
-                                    </strong>
-                                </td>
-                                <td>
-                                    Albert Cook
-                                </td>
-                                
-                                <td>
-                                    <span class="badge bg-label-primary me-1">
-                                        Active
-                                    </span>
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-edit-alt me-1"></i> 
-                                                Edit
+
+                            {% for group in groups %}
+                                {% for student in group.students.all %}
+                                    <tr>
+                                        <td>
+                                            {{ student.id }}
+                                        </td>
+                                        <td>
+                                            {{ student.title }}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'main:student' student.id %}">
+                                            {{ student.full_name }}
                                             </a>
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-trash me-1"></i>
-                                                Delete
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fab fa-react fa-lg text-info me-3"></i> 
-                                    <strong>
-                                        React Project
-                                    </strong>
-                                </td>
-                                <td>Barry Hunter</td>
-                                
-                                <td><span class="badge bg-label-success me-1">Completed</span></td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-edit-alt me-1"></i> 
-                                                Edit
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-trash me-1"></i> 
-                                                Delete
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fab fa-vuejs fa-lg text-success me-3"></i> 
-                                    <strong>
-                                        VueJs Project
-                                    </strong>
-                                </td>
-                                <td>
-                                    Trevor Baker
-                                </td>
-                                
-                                <td><span class="badge bg-label-info me-1">Scheduled</span></td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-edit-alt me-1"></i> 
-                                                Edit
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-trash me-1"></i> 
-                                                Delete
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <i class="fab fa-bootstrap fa-lg text-primary me-3"></i> <strong>Bootstrap
-                                    Project</strong>
-                                </td>
-                                <td>Jerry Milton</td>
-                                <td>
-                                    <span class="badge bg-label-warning me-1">
-                                        Pending
-                                    </span>
-                                </td>
-                                <td>
-                                    <div class="dropdown">
-                                        <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                                            <i class="bx bx-dots-vertical-rounded"></i>
-                                        </button>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">
-                                                <i class="bx bx-edit-alt me-1"></i> 
-                                                Edit
-                                            </a>
-                                            <a class="dropdown-item" href="">
-                                                <i class="bx bx-trash me-1"></i> 
-                                                Delete
-                                            </a>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                        </td>
+                                        <td>
+                                            {{ group.name }}
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                        data-bs-toggle="dropdown">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="">
+                                                        <i class="bx bx-check me-1"></i>
+                                                        Natijasi
+                                                    </a>
+                                                    <a class="dropdown-item" href="">
+                                                        <i class="bx bx-edit-alt me-1"></i>
+                                                        Topshirish
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                            {% endfor %}
+
                             </tbody>
                         </table>
                     </div>
