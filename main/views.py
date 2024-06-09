@@ -18,6 +18,9 @@ def students_view(request):
 def student_view(request, student_id):
     context = contexts_func(request)
     context['student'] = Student.objects.get(id=student_id)
+    if request.method == 'POST':
+        print(request.POST.get('student'))
+        print(request.POST.get('station'))
     return render(request, 'main/student.html', context)
 
 
@@ -50,18 +53,19 @@ def station_view(request, pk):
 
 
 def exams_view(request):
-
-    return render(request, 'main/exam.html')
+    context = contexts_func(request)
+    student = Student.objects.get(id=request.POST.get('student'))
+    station = Station.objects.get(id=request.POST.get('station'))
+    context['student'] = student
+    context['station'] = station
+    return render(request, 'main/exam.html', context)
 
 
 def pass_exams_view(request, student_pk, station_pk):
     # student = Student.objects.get(pk=student_pk)
     # station = Station.objects.get(pk=station_pk)
     if request.method == 'POST':
-        print(request.POST.get('1'))
-        print(request.POST.get('2'))
-        print(request.POST.get('3'))
-        print(request.POST.get('4'))
+        pass
 
     return render(request, 'main/exam.html', {'student_pk': student_pk, 'station_pk': station_pk, 'list_s': range(1, 6)})
 
