@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from .functions import contexts_func
-from .models import Student, Group, Title, Station, General
+from .models import Student, Group, Title, Station, General, Result
 
 
 def welcome_view(request):
@@ -58,16 +58,39 @@ def exams_view(request):
     station = Station.objects.get(id=request.POST.get('station'))
     context['student'] = student
     context['station'] = station
+    print(context['student'])
+    print(context['station'])
     return render(request, 'main/exam.html', context)
 
 
 def pass_exams_view(request, student_pk, station_pk):
-    # student = Student.objects.get(pk=student_pk)
-    # station = Station.objects.get(pk=station_pk)
     if request.method == 'POST':
         pass
 
     return render(request, 'main/exam.html', {'student_pk': student_pk, 'station_pk': station_pk, 'list_s': range(1, 6)})
 
+
+def check_exam(request):
+    context = contexts_func(request)
+    station = Station.objects.get(id=request.POST.get('station'))
+    student = Student.objects.get(id=request.POST.get('student'))
+    if request.method == 'POST':
+        k = 0
+        for title in station.titles.all():
+            result = Result.objects.create(title=title, student=student, station=station)
+            if request.POST.get(str(title.id)) == 'on':
+                k += 1
+                result.result = True
+            else:
+                result.result = False
+            result.save()
+        general = General.objects.get(student=student)
+        if general is not None:
+            print("Topshirmagan")
+        else:
+            print("Topshirgan")
+        print(k/station.titles.all().count() * 100)
+
+    return render(request, 'main/exam.html', context)
 
 

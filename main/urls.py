@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('group/<int:pk>/', views.group_view, name='group'),
 
-
     path('exam/', views.exams_view, name='exam'),
+    path('check/', views.check_exam, name='check'),
 
 ]

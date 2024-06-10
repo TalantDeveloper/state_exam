@@ -41,6 +41,16 @@ class Station(models.Model):
         return titles
 
 
+class Result(models.Model):
+    student = models.ForeignKey(Student, verbose_name="Student", on_delete=models.CASCADE)
+    title = models.ForeignKey(Title, verbose_name="Title", on_delete=models.CASCADE)
+    station = models.ForeignKey(Station, verbose_name="Station", on_delete=models.CASCADE)
+    result = models.BooleanField(verbose_name="Result", default=False)
+
+    def __str__(self):
+        return f"{self.title}: {self.station}"
+
+
 class Exam(models.Model):
     student = models.ForeignKey(Student, verbose_name="Student", on_delete=models.SET_NULL, null=True, blank=True)
     group = models.ForeignKey(Group, verbose_name="Group", on_delete=models.SET_NULL, null=True, blank=True)

@@ -9,6 +9,7 @@ def contexts_func(request):
     hour_pirsent = [student for student in generals if student.exam.result == 100.0]
     eyti_pirsent = [student for student in generals if student.exam.result > 85 and student.exam.result < 100.0]
     six_pirsent = [student for student in generals if student.exam.result > 60 and student.exam.result < 85.1]
+    pass_pirsent = [student for student in generals if student.exam.result < 60.0]
     context = {
         'stations': stations,
         'groups': groups,
@@ -17,6 +18,7 @@ def contexts_func(request):
         'hour_pirsent': hour_pirsent,
         'eyti_pirsent': eyti_pirsent,
         'six_pirsent': six_pirsent,
+        'pass_pirsent': pass_pirsent,
     }
     return context
 
