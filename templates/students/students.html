@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <h4 class="fw-bold py-3 mb-4">
+                <span class="text-muted fw-light">
+                    Talabalar /
+                </span>
+                Basic Tables
+            </h4>
+
+            <!-- Bordered Table -->
+            <div class="card">
+                <h5 class="card-header">
+                    Barcha talabalar
+                </h5>
+                <div class="card-body">
+                    <div class="table-responsive text-nowrap">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Talaba ID
+                                </th>
+                                <th>
+                                    F.I.O.
+                                </th>
+                                <th>
+                                    Guruh
+                                </th>
+                                <th>
+                                    Imtihon
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            {% for group in groups %}
+                                {% for student in group.students.all %}
+                                    <tr>
+                                        <td>
+                                            {{ student.id }}
+                                        </td>
+                                        <td>
+                                            {{ student.title }}
+                                        </td>
+                                        <td>
+                                            <a href="{% url 'main:student' student.id %}">
+                                            {{ student.full_name }}
+                                            </a>
+                                        </td>
+                                        <td>
+                                            {{ group.name }}
+                                        </td>
+                                        <td>
+                                            <div class="dropdown">
+                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
+                                                        data-bs-toggle="dropdown">
+                                                    <i class="bx bx-dots-vertical-rounded"></i>
+                                                </button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="{% url 'main:student' student.id %}">
+                                                        <i class="bx bx-check me-1"></i>
+                                                        Test
+                                                    </a>
+                                                    <a class="dropdown-item" href="{% url 'main:student' student.id %}">
+                                                        <i class="bx bx-edit-alt me-1"></i>
+                                                        Akkreditatsiya
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--/ Bordered Table -->
+
+            <hr class="my-5"/>
+        
+        </div>
+        <!-- / Content -->
+    </div>
+
+{% endblock %}

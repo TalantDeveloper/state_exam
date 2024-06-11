@@ -78,5 +78,5 @@ class General(models.Model):
     result_sum = models.FloatField(verbose_name="ResultSum", null=True, blank=True)
 
     def __str__(self):
-        return f"{(self.exam.result + self.result_test.result) / 2} %"
+        return f"{(self.exam.result + self.result_test.result)/2}"
 

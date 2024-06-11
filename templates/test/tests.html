@@ -5,13 +5,12 @@
     <!-- Content wrapper -->
     <div class="content-wrapper">
         <!-- Content -->
-
         <div class="container-xxl flex-grow-1 container-p-y">
             <h4 class="fw-bold py-3 mb-4">
                 <span class="text-muted fw-light">
                     Talabalar /
                 </span>
-                Basic Tables
+                Test natijalari
             </h4>
 
             <!-- Bordered Table -->
@@ -28,58 +27,37 @@
                                     ID
                                 </th>
                                 <th>
-                                    Talaba ID
+                                    Talaba F.I.O.
                                 </th>
-                                <th>
-                                    F.I.O.
-                                </th>
+                                
                                 <th>
                                     Guruh
                                 </th>
                                 <th>
-                                    Attestatsiya
+                                    Natija
                                 </th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            {% for group in groups %}
-                                {% for student in group.students.all %}
+                            {% for result in result_tests %}
                                     <tr>
                                         <td>
-                                            {{ student.id }}
+                                            {{ result.id }}
                                         </td>
                                         <td>
-                                            {{ student.title }}
+                                            {{ result.student.full_name }}
                                         </td>
                                         <td>
-                                            <a href="{% url 'main:student' student.id %}">
-                                            {{ student.full_name }}
+                                            <a href="{% url 'main:test' result.student.id %}">
+                                            {{ result.group.name }}
                                             </a>
                                         </td>
                                         <td>
-                                            {{ group.name }}
+                                            {{ result.result }}
                                         </td>
-                                        <td>
-                                            <div class="dropdown">
-                                                <button type="button" class="btn p-0 dropdown-toggle hide-arrow"
-                                                        data-bs-toggle="dropdown">
-                                                    <i class="bx bx-dots-vertical-rounded"></i>
-                                                </button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="">
-                                                        <i class="bx bx-check me-1"></i>
-                                                        Natijasi
-                                                    </a>
-                                                    <a class="dropdown-item" href="">
-                                                        <i class="bx bx-edit-alt me-1"></i>
-                                                        Topshirish
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </td>
+                                        
                                     </tr>
-                                {% endfor %}
 
                             {% endfor %}
 
